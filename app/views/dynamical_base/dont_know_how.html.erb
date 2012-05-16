@@ -1,0 +1,42 @@
+<% content_for :head do %>
+<script type="text/javascript" src="/javascripts/codemirror.js" ></script>
+<script type="text/javascript" src="/javascripts/ruby.js" ></script>
+
+<link href='/stylesheets/codemirror.css' rel='stylesheet' type='text/css' />
+<%end%>
+
+<center>
+<div class="mono">
+  <span>You told me to do</span>
+  <br/><br/>
+  <span><%=@what_to_do%></span>
+  <br/><br/>
+  <span>I don't know how to do that.  Please show me.</span>
+</div>
+</center>
+<br/>
+<%= form_tag '/dynamical/thats_how' do %>
+  <div style="margin-left: auto ;margin-right: auto ;width: 700px ;">
+    <div style="width:675px;border:solid 1px black;">
+      <textarea id="code" name="how">
+        # Please show me how to do <%=@what_to_do%>
+      </textarea>
+    <div>
+  </div>
+  <center>
+    <div style="width:75px;">
+      <input type="submit" value="That's How" class="black2 vista" href="#" style="float:right;" />
+    </div>
+  </center>
+  <input type="hidden" value="<%=@what_to_do%>" name="what_to_do" />
+<% end %>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      mode: "text/x-ruby",
+      tabMode: "indent",
+      matchBrackets: true,
+	  lineNumbers: true,
+      indentUnit: 4,
+	  lineWrapping: true
+    });
+</script>

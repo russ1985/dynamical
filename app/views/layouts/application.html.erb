@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamical</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  
+  <link href='/stylesheets/buttons.css' rel='stylesheet' type='text/css' />
+  <link href='/stylesheets/textfield.css' rel='stylesheet' type='text/css' />
+  <link href='/stylesheets/fonts.css' rel='stylesheet' type='text/css' />
+  <%= yield :head %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

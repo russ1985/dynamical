@@ -1,0 +1,10 @@
+<%= form_tag '/dynamical/do_it' do %>
+  <center>
+      <label for="what_to_do" class="mono">What do you want me to do?</label> 
+	  <br/>
+      <%=text_field_tag 'what_to_do', '', :class => 'textfield_glossy'%>
+	<div style="width:75px;padding-top:10px;">
+    <input type="submit" value="Do IT!" class="black2 vista" href="#" style="float:right;" />
+	</div>
+  </center>
+<% end %>
